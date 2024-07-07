@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Text Tool</title>
+</head>
+    <body>
+        <h1 class="app-name">WordFusion</h1>
+        <h2 class="heading">Write Your Text Here...!!</h2>
+        <input type="text" class="container" id="input-text">
+    
+        <p class="Result-text" id="resultText"></p>
+    
+        <div class="btn-container">
+            <button type="button" class="action-1" onclick="ActionResult('UPPERCASE')">UpperCase</button>
+            <button type="button" class="action-2" onclick="ActionResult('LowerCase')">LowerCase</button>
+            <button type="button" class="action-3" onclick="ActionResult('CharCount')">CharCount</button>
+            <button type="button" class="action-4" onclick="ActionResult('WordCount')">WordCount</button>
+        </div>
+    
+        <script>
+            function ActionResult(action) {
+                const inputText = document.getElementById("input-text").value;
+                const resultText = document.getElementById("resultText");
+    
+                if (action == 'UPPERCASE') {
+                    resultText.innerText = inputText.toUpperCase();
+                } else if (action == 'LowerCase') {
+                    resultText.innerText = inputText.toLowerCase();
+                } else if (action == 'CharCount') {
+                    resultText.innerText = `The Character Count of given text is ${inputText.length}`;
+                } else if (action == 'WordCount') {
+                    resultText.innerText = `The Word Count of given text is ${inputText.trim().split(/\s+/).length}`;
+                }
+            }
+        </script>
+</body>
+</html>
